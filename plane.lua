@@ -14,10 +14,12 @@ local function countItems()
 end
 
 local function finditemToPlace()
-  while (turtle.getItemCount(currentSlot) == 0 )
+  local currentSlot = 0
+  while (turtle.getItemCount(currentSlot+1) == 0 )
   do
-    currentSlot = ((currentSlot+1)%16)+1
+    currentSlot = ((currentSlot+1)%16)
   end
+  turtle.select(currentSlot+1)
 end
 
 local function digF()
@@ -105,8 +107,6 @@ end
 area = xSize * ySize
 
 print(("we will need %d items and %d fuel"):format(area,area*2))
-
-currentSlot = 1
 
 buildHPlane(xSize, ySize)
 
