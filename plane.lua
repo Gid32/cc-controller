@@ -66,22 +66,29 @@ local function buildHPlane(xSize, ySize)
   end
 end
 
-local function returnToStart(xSize, ySize)
-  if xSize%2 ~= 0
-  then
-    turtle.turnRight()
-    turtle.turnRight()
-    for j = 1,ySize-1
-    do
-      step()
-    end
+local function returnY(ySize)
+  turtle.turnRight()
+  turtle.turnRight()
+  for j = 1,ySize-1
+  do
+    step()
   end
+end
 
+local function returnX(xSize)
   turtle.turnRight()
   for i = 1,xSize-1
   do
     step()
   end
+end
+
+local function returnToStart(xSize, ySize)
+  if xSize%2 ~= 0
+  then
+    returnY(ySize)
+  end
+  returnX(xSize)
 end
 
 ----------------------------------
