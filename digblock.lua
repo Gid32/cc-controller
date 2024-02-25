@@ -61,3 +61,6 @@ local function returnToStart(xSize, ySize)
   end
   returnX(xSize)
 end
+
+layers = ySize // 3
+lastLayer = ySize % 3
