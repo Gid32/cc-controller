@@ -1,7 +1,11 @@
 local tArgs = { ... }
 if (#tArgs ~= 3) then
-	print( "Usage: plain <x> <z> [floor|ceil] " )
+	print( "Usage: digblock <x> <y> <z>" )
 	return
+end
+
+function sign(x)
+  return x>0 and 1 or x<0 and -1 or 0
 end
 
 local function digF()
@@ -62,5 +66,14 @@ local function returnToStart(xSize, ySize)
   returnX(xSize)
 end
 
+-- ============================== --
+
 layers = ySize // 3
 lastLayer = ySize % 3
+                                                  
+
+digLastlayer(lastLayer,xSize,zSize)
+for i = 1,layers
+do
+  digLayer(xSize,zSize)
+end
