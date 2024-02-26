@@ -66,11 +66,14 @@ local function returnToStart(xSize, ySize)
   returnX(xSize)
 end
 
+
+
 -- ============================== --
 
 layers = ySize // 3
 lastLayer = ySize % 3
-                                                  
+
+vector
 
 digLastlayer(lastLayer,xSize,zSize)
 for i = 1,layers
